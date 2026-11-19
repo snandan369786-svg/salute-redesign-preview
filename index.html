@@ -1,0 +1,753 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Salute · Italian Restaurant · Downtown Hartford</title>
+<meta name="description" content="Salute — upscale casual Italian in downtown Hartford, CT. Lunch, dinner, bar & lounge, happy hour, takeout and catering. 100 Trumbull St · 860-899-1350.">
+<link rel="icon" href="https://img1.wsimg.com/isteam/ip/81c6bc6f-0c44-462e-be36-14e540a6e3e9/favicon/605c38ec-7cb9-4079-a364-9618d0a9921e.jpg/:/rs=w:64,h:64,m">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --wine:#7b1e2b; --wine-deep:#561420; --wine-soft:#a8434f;
+  --cream:#f7f1e6; --paper:#fbf8f2; --sand:#ecdfcb; --terra:#c06a3d;
+  --ink:#231c19; --ink-2:#5a4e47; --line:#dccfbd; --gold:#b8904f;
+  --serif:"Cormorant Garamond",Georgia,serif; --sans:"Manrope",system-ui,-apple-system,sans-serif;
+  --r:14px; --max:1180px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
+h1,h2,h3{font-variant-numeric:lining-nums;font-family:var(--serif);font-weight:600;line-height:1.08;letter-spacing:-.01em}
+.eyebrow{font-size:.74rem;letter-spacing:.22em;text-transform:uppercase;font-weight:700;color:var(--wine)}
+.btn{display:inline-flex;align-items:center;gap:.55em;padding:.9em 1.5em;border-radius:999px;font-weight:600;font-size:.92rem;text-decoration:none;border:1.5px solid transparent;transition:.2s;cursor:pointer;white-space:nowrap}
+.btn-wine{background:var(--wine);color:#fff}.btn-wine:hover{background:var(--wine-deep)}
+.btn-ghost{border-color:currentColor}.btn-ghost:hover{background:rgba(255,255,255,.12)}
+.btn-line{border-color:var(--wine);color:var(--wine)}.btn-line:hover{background:var(--wine);color:#fff}
+svg.i{width:1.05em;height:1.05em;flex:none}
+
+/* ---------- header ---------- */
+.top{background:var(--wine-deep);color:#f3e3d6;font-size:.82rem}
+.top .wrap{display:flex;justify-content:space-between;gap:16px;padding-top:8px;padding-bottom:8px}
+.top a{text-decoration:none}.top b{color:#fff;font-weight:600}
+header.nav{position:sticky;top:0;z-index:50;background:rgba(251,248,242,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:72px;gap:20px}
+.logo img{height:48px;width:auto;mix-blend-mode:multiply}
+.links{display:flex;gap:28px;list-style:none}
+.links a{text-decoration:none;font-weight:600;font-size:.9rem;color:var(--ink-2);position:relative;padding:6px 0}
+.links a:hover,.links a.on{color:var(--wine)}
+.links a.on::after{content:"";position:absolute;left:0;right:0;bottom:-2px;height:2px;background:var(--wine);border-radius:2px}
+.nav-cta{display:flex;gap:10px;align-items:center}
+.burger{display:none;background:none;border:0;width:42px;height:42px;cursor:pointer;color:var(--ink)}
+.drawer{display:none}
+
+/* ---------- hero ---------- */
+.hero{position:relative;min-height:min(86vh,760px);display:flex;align-items:flex-end;color:#fff;overflow:hidden}
+.hero-img{position:absolute;inset:0;background:url("https://img1.wsimg.com/isteam/ip/81c6bc6f-0c44-462e-be36-14e540a6e3e9/IMG_5391-1abefbe.JPEG/:/rs=w:2000") center/cover}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(35,18,16,.25) 0%,rgba(35,18,16,.35) 40%,rgba(35,14,14,.88) 100%)}
+.hero .wrap{position:relative;z-index:2;padding-bottom:64px;width:100%}
+.hero .eyebrow{color:#f0c9a8}
+.hero h1{font-size:clamp(2.8rem,7vw,5.6rem);margin:14px 0 18px;max-width:14ch;font-weight:600}
+.hero h1 em{font-style:italic;color:#f0c9a8}
+.hero p{max-width:52ch;font-size:1.08rem;color:#f2e7de}
+.hero .row{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.hero-card{position:absolute;right:24px;bottom:64px;z-index:3;background:rgba(251,248,242,.97);color:var(--ink);border-radius:var(--r);padding:20px 22px;width:290px;box-shadow:0 20px 50px rgba(0,0,0,.3)}
+.hero-card h4{font-family:var(--serif);font-size:1.3rem;margin-bottom:8px}
+.hours{list-style:none;font-size:.88rem}
+.hours li{display:flex;justify-content:space-between;gap:12px;padding:5px 0;border-bottom:1px dashed var(--line)}
+.hours li:last-child{border:0}.hours li.today{color:var(--wine);font-weight:700}
+.status{display:inline-flex;align-items:center;gap:6px;font-size:.78rem;font-weight:700;margin-bottom:6px}
+.status i{width:8px;height:8px;border-radius:50%;background:#3c9a5f}
+.status.closed i{background:#b4483f}
+
+/* ---------- sections ---------- */
+section{padding:96px 0}
+.sec-head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;margin-bottom:44px;flex-wrap:wrap}
+.sec-head h2{font-size:clamp(2.2rem,4.4vw,3.4rem);margin-top:10px}
+.sec-head p{max-width:46ch;color:var(--ink-2)}
+
+/* strip */
+.strip{background:var(--wine);color:#fbeee4;padding:22px 0}
+.strip .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.strip div{display:flex;gap:12px;align-items:center;font-size:.9rem;line-height:1.35}
+.strip svg{width:26px;height:26px;flex:none;color:#f0c9a8}
+.strip b{display:block;color:#fff}
+
+/* about */
+.about-grid{display:grid;grid-template-columns:1.05fr 1fr;gap:64px;align-items:center}
+.about-photos{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.about-photos img{border-radius:var(--r);width:100%;height:100%;object-fit:cover}
+.about-photos .tall{grid-row:span 2;aspect-ratio:3/4.3}
+.about-photos .sq{aspect-ratio:1}
+.pillars{margin-top:30px;display:grid;gap:22px}
+.pillar{display:grid;grid-template-columns:44px 1fr;gap:16px}
+.pillar span{font-family:var(--serif);font-size:1.8rem;color:var(--wine);font-style:italic;line-height:1}
+.pillar h3{font-size:1.45rem;margin-bottom:4px}
+.pillar p{color:var(--ink-2);font-size:.96rem}
+.owners{margin-top:28px;padding:18px 20px;background:var(--cream);border-left:3px solid var(--wine);border-radius:0 10px 10px 0;font-size:.93rem;color:var(--ink-2)}
+.owners b{color:var(--ink)}
+
+/* menu */
+#menu{background:var(--cream)}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:34px}
+.tab{background:transparent;border:1.5px solid var(--line);color:var(--ink-2);padding:.62em 1.15em;border-radius:999px;font:600 .88rem var(--sans);cursor:pointer;transition:.2s}
+.tab:hover{border-color:var(--wine);color:var(--wine)}
+.tab[aria-selected="true"]{background:var(--wine);border-color:var(--wine);color:#fff}
+.panel{display:none;background:var(--paper);border:1px solid var(--line);border-radius:20px;padding:48px 52px;box-shadow:0 1px 0 rgba(0,0,0,.02)}
+.panel.show{display:block;animation:fade .35s ease}
+@keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.panel-top{display:flex;justify-content:space-between;align-items:baseline;gap:20px;flex-wrap:wrap;border-bottom:1px solid var(--line);padding-bottom:20px;margin-bottom:34px}
+.panel-top h3{font-size:2.3rem}
+.panel-top p{color:var(--ink-2);font-size:.9rem}
+.cols{columns:2;column-gap:64px}
+.group{break-inside:avoid;margin-bottom:38px}
+.group h4{font-family:var(--serif);font-size:1.55rem;color:var(--wine);font-weight:600;margin-bottom:6px;display:flex;align-items:center;gap:14px}
+.group h4::after{content:"";flex:1;height:1px;background:var(--line)}
+.group .note{font-size:.82rem;color:var(--ink-2);margin:-2px 0 10px;font-style:italic}
+.item{padding:12px 0;border-bottom:1px dotted var(--line)}
+.item:last-child{border:0}
+.item .t{display:flex;align-items:baseline;gap:10px}
+.item .n{font-weight:700;font-size:.98rem;letter-spacing:.01em}
+.item .lead{flex:1;border-bottom:1px dotted #c9b9a3;transform:translateY(-4px);min-width:12px}
+.item .p{font-family:var(--serif);font-weight:700;font-size:1.2rem;color:var(--wine)}
+.item .d{font-size:.88rem;color:var(--ink-2);margin-top:2px;max-width:46ch}
+.tag{display:inline-block;font-size:.62rem;font-weight:700;letter-spacing:.08em;padding:2px 6px;border-radius:4px;vertical-align:2px;margin-left:4px}
+.tag.v{background:#e3eedb;color:#3d6a2c}.tag.s{background:#f6dcd5;color:#a3321f}
+.fineprint{margin-top:8px;padding-top:20px;border-top:1px solid var(--line);font-size:.8rem;color:var(--ink-2);display:flex;gap:18px;flex-wrap:wrap;justify-content:space-between}
+.legend{display:flex;gap:14px;align-items:center}
+.callout{background:var(--cream);border-radius:12px;padding:16px 18px;font-size:.9rem;margin-bottom:22px}
+.callout b{color:var(--wine)}
+.price-big{font-family:var(--serif);font-size:2.4rem;color:var(--wine);font-weight:700;line-height:1}
+.choices li{list-style:none;padding:9px 0;border-bottom:1px dotted var(--line);font-size:.93rem}
+.choices li b{display:block;font-size:.95rem}
+.choices li span{color:var(--ink-2);font-size:.86rem}
+/* tables */
+.tbl-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:0 -4px}
+table{width:100%;border-collapse:collapse;font-size:.9rem}
+th{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-2);text-align:right;padding:10px 12px;border-bottom:2px solid var(--ink);white-space:nowrap}
+th:first-child{text-align:left}
+th small{display:block;letter-spacing:0;text-transform:none;font-weight:500;font-size:.75rem}
+td{padding:10px 12px;border-bottom:1px solid var(--line);text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+td:first-child{text-align:left;white-space:normal;font-weight:600}
+td:first-child small{display:block;font-weight:400;color:var(--ink-2);font-size:.8rem}
+tr.sub td{background:var(--cream);font-family:var(--serif);font-size:1.15rem;color:var(--wine);font-weight:700;padding-top:14px}
+td.na{color:#bfb1a0}
+.wine td:first-child span{font-weight:400;color:var(--ink-2);font-size:.84rem}
+
+/* bar */
+#bar{background:#1d1513;color:#efe5dc;position:relative;overflow:hidden}
+#bar .eyebrow{color:#e7a98a}
+#bar .sec-head p{color:#c8b8ab}
+.bar-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin-bottom:56px}
+.bar-grid img{border-radius:var(--r);width:100%;height:340px;object-fit:cover}
+.hh{display:grid;grid-template-columns:1.1fr 1fr;gap:40px;align-items:center;background:linear-gradient(120deg,var(--wine) 0%,var(--wine-deep) 100%);border-radius:22px;padding:44px 48px;margin-bottom:56px}
+.hh h3{font-size:2.6rem;color:#fff}
+.hh p{color:#f3dccf;margin-top:10px}
+.hh-times{display:grid;gap:12px}
+.hh-times div{display:flex;justify-content:space-between;align-items:center;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);border-radius:12px;padding:16px 20px}
+.hh-times b{font-family:var(--serif);font-size:1.5rem;font-weight:600}
+#bar .tab{border-color:#4a3a35;color:#d8c8bb}
+#bar .tab:hover{border-color:#e7a98a;color:#fff}
+#bar .tab[aria-selected="true"]{background:#efe5dc;color:#1d1513;border-color:#efe5dc}
+#bar .panel{background:#261c19;border-color:#3d2f2b}
+#bar .panel-top{border-color:#3d2f2b}
+#bar .panel-top p,#bar .item .d,#bar .group .note{color:#bba99c}
+#bar .group h4{color:#e7a98a}#bar .group h4::after{background:#3d2f2b}
+#bar .item{border-color:#3d2f2b}#bar .item .lead{border-color:#5a4740}
+#bar .item .p{color:#f0c9a8}
+#bar th{color:#bba99c;border-color:#efe5dc}#bar td{border-color:#3d2f2b}
+#bar tr.sub td{background:#2f2320;color:#e7a98a}
+#bar .wine td:first-child span{color:#a8978b}
+#bar td.na{color:#5a4740}
+#bar .fineprint{border-color:#3d2f2b;color:#a8978b}
+.list-dots{columns:2;column-gap:40px;list-style:none}
+.list-dots li{padding:7px 0;border-bottom:1px dotted #3d2f2b;break-inside:avoid;font-size:.94rem}
+
+/* takeout */
+.feature-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.card{background:#fff;border:1px solid var(--line);border-radius:18px;overflow:hidden;display:flex;flex-direction:column}
+.card img{height:230px;width:100%;object-fit:cover}
+.card .b{padding:24px 24px 26px;display:flex;flex-direction:column;gap:10px;flex:1}
+.card h3{font-size:1.65rem}
+.card p{color:var(--ink-2);font-size:.93rem;flex:1}
+.card .go{font-weight:700;color:var(--wine);text-decoration:none;font-size:.9rem;display:inline-flex;gap:6px;align-items:center;background:none;border:0;cursor:pointer;padding:0;font-family:inherit}
+.press{margin-top:56px;display:grid;grid-template-columns:auto 1fr auto;gap:28px;align-items:center;padding:30px 34px;border:1px solid var(--line);border-radius:18px;background:var(--cream)}
+.press .q{font-family:var(--serif);font-size:1.45rem;font-style:italic;line-height:1.35}
+.press .src{font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:var(--wine)}
+
+/* catering */
+#catering{background:var(--cream)}
+.cater-hero{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;margin-bottom:56px}
+.cater-hero img{border-radius:20px;aspect-ratio:4/3;object-fit:cover;width:100%}
+.cater-hero h2{font-size:clamp(2.2rem,4.4vw,3.4rem);margin:10px 0 16px}
+.cater-hero p{color:var(--ink-2);margin-bottom:14px}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:24px 0 28px}
+.steps div{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:14px}
+.steps b{font-family:var(--serif);font-size:1.6rem;color:var(--wine);display:block;line-height:1}
+.steps span{font-size:.82rem;color:var(--ink-2)}
+#catering .panel{display:block}
+
+/* visit */
+.visit{display:grid;grid-template-columns:1fr 1.15fr;gap:40px}
+.info{display:grid;gap:18px}
+.info .blk{background:var(--cream);border-radius:16px;padding:24px 26px}
+.info h3{font-size:1.5rem;margin-bottom:8px}
+.info p{color:var(--ink-2);font-size:.95rem}
+.info a.tel{font-family:var(--serif);font-size:2rem;color:var(--wine);text-decoration:none;font-weight:700}
+.map{border-radius:18px;overflow:hidden;border:1px solid var(--line);min-height:460px;background:var(--sand)}
+.map iframe{width:100%;height:100%;min-height:460px;border:0;display:block}
+
+/* footer */
+footer{background:var(--wine-deep);color:#ead6c9;padding:64px 0 28px}
+.f-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:36px}
+footer h5{font-size:.74rem;letter-spacing:.2em;text-transform:uppercase;color:#f0c9a8;margin-bottom:14px}
+footer ul{list-style:none;display:grid;gap:8px;font-size:.92rem}
+footer a{text-decoration:none}footer a:hover{color:#fff;text-decoration:underline}
+.f-logo{background:var(--paper);display:inline-block;padding:10px 16px;border-radius:12px;margin-bottom:14px}
+.f-logo img{height:44px;mix-blend-mode:multiply}
+.social{display:flex;gap:10px;margin-top:14px}
+.social a{width:40px;height:40px;border-radius:50%;border:1px solid rgba(255,255,255,.25);display:grid;place-items:center}
+.social a:hover{background:rgba(255,255,255,.1);text-decoration:none}
+.f-bot{border-top:1px solid rgba(255,255,255,.14);margin-top:44px;padding-top:22px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:.8rem;color:#c9ac9d}
+
+/* mobile call bar */
+.callbar{display:none}
+
+/* ---------- responsive ---------- */
+@media (max-width:1020px){
+  .links{display:none}.burger{display:grid;place-items:center}
+  .nav-cta .btn-line{display:none}
+  .drawer{display:block;position:fixed;inset:72px 0 auto 0;background:var(--paper);border-bottom:1px solid var(--line);padding:8px 24px 24px;transform:translateY(-120%);transition:transform .3s;z-index:40;box-shadow:0 20px 40px rgba(0,0,0,.08)}
+  .drawer.open{transform:none}
+  .drawer a{display:block;padding:14px 0;border-bottom:1px solid var(--line);text-decoration:none;font-family:var(--serif);font-size:1.5rem}
+  .hero{min-height:0;flex-direction:column;align-items:stretch;padding-top:120px}
+  .hero .wrap{padding-bottom:28px}
+  .hero-card{position:relative;right:auto;bottom:auto;width:auto;margin:0 24px 32px;z-index:3}
+  .about-grid,.cater-hero,.visit,.hh{grid-template-columns:1fr;gap:36px}
+  .feature-grid{grid-template-columns:1fr 1fr}
+  .strip .wrap{grid-template-columns:1fr 1fr}
+  .f-grid{grid-template-columns:1fr 1fr}
+  .press{grid-template-columns:1fr}
+}
+@media (max-width:720px){
+  .wrap{padding:0 16px}
+  .top .hide-s{display:none}
+  .nav-cta .btn-wine{display:none}
+  .logo img{height:42px}
+  section{padding:68px 0}
+  .hero{padding-top:80px}
+  .hero-card{margin:0 16px 24px}
+  .panel{padding:28px 18px;border-radius:16px}
+  .panel-top h3{font-size:1.9rem}
+  .cols{columns:1}
+  .list-dots{columns:1}
+  .feature-grid{grid-template-columns:1fr}
+  .bar-grid{grid-template-columns:1fr 1fr}.bar-grid img{height:220px}.bar-grid img:last-child{display:none}
+  .hh{padding:30px 22px}.hh h3{font-size:2.1rem}
+  .strip .wrap{grid-template-columns:1fr;gap:14px}
+  .steps{grid-template-columns:1fr}
+  .f-grid{grid-template-columns:1fr}
+  .map,.map iframe{min-height:340px}
+  .tabs{flex-wrap:nowrap;overflow-x:auto;margin-left:-16px;margin-right:-16px;padding:0 16px 4px;scrollbar-width:none}
+  .tabs::-webkit-scrollbar{display:none}
+  .tab{flex:none}
+  .callbar{display:grid;grid-template-columns:1fr 1fr;gap:10px;position:fixed;left:0;right:0;bottom:0;z-index:60;padding:10px 16px calc(10px + env(safe-area-inset-bottom));background:rgba(251,248,242,.97);border-top:1px solid var(--line);backdrop-filter:blur(8px)}
+  .callbar .btn{justify-content:center}
+  body{padding-bottom:72px}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+.item .p,.price-big,.hh b,.info a.tel,.steps b{font-variant-numeric:lining-nums tabular-nums}
+@media (max-width:720px){
+  td,th{padding:10px 9px}
+  #catering-panel td:first-child,#catering-panel th:first-child{min-width:158px;position:sticky;left:0;background:var(--paper);z-index:1;box-shadow:1px 0 0 var(--line)}
+  #catering-panel tr.sub td{position:static;box-shadow:none;background:var(--cream)}
+  .wine td:first-child{min-width:170px}
+}
+.stick{position:sticky;left:12px;display:inline-block}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></symbol>
+  <symbol id="i-car" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 17h14v-5l-2-5H7l-2 5z"/><circle cx="7.5" cy="17.5" r="1.5"/><circle cx="16.5" cy="17.5" r="1.5"/><path d="M5 12h14"/></symbol>
+  <symbol id="i-glass" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 22h8M12 15v7M7 2h10l-1 7a4 4 0 0 1-8 0z"/></symbol>
+  <symbol id="i-bag" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><path d="M3 6h18M16 10a4 4 0 0 1-8 0"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+  <symbol id="i-gift" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12v10H4V12M2 7h20v5H2zM12 22V7M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7zM12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/></symbol>
+</svg>
+
+<div class="top"><div class="wrap">
+  <span><span class="hide-s">100 Trumbull St, Downtown Hartford · </span>Reservations by phone: <a href="tel:+18608991350"><b>860-899-1350</b></a></span>
+  <span class="hide-s">Happy Hour · Mon 3–9pm · Tue–Fri 3–6pm</span>
+</div></div>
+
+<header class="nav">
+  <div class="wrap">
+    <a href="#home" class="logo" aria-label="Salute home"><img src="https://img1.wsimg.com/isteam/ip/81c6bc6f-0c44-462e-be36-14e540a6e3e9/Logo%202025.png/:/rs=w:300" alt="Salute"></a>
+    <ul class="links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#menu">Menu</a></li>
+      <li><a href="#bar">Bar &amp; Lounge</a></li>
+      <li><a href="#takeout">Takeout</a></li>
+      <li><a href="#catering">Catering</a></li>
+      <li><a href="#visit">Visit</a></li>
+    </ul>
+    <div class="nav-cta">
+      <a class="btn btn-line" href="https://salutehartford.webgiftcardsales.com/" target="_blank" rel="noopener">Gift Cards</a>
+      <a class="btn btn-wine" href="tel:+18608991350"><svg class="i"><use href="#i-phone"/></svg>Reserve</a>
+      <button class="burger" aria-label="Open menu" aria-expanded="false"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+    </div>
+  </div>
+</header>
+<nav class="drawer" aria-label="Mobile">
+  <a href="#about">About</a><a href="#menu">Menu</a><a href="#bar">Bar &amp; Lounge</a><a href="#takeout">Takeout</a><a href="#catering">Catering</a><a href="#visit">Visit</a>
+  <a href="https://salutehartford.webgiftcardsales.com/" target="_blank" rel="noopener">Gift Cards ↗</a>
+</nav>
+
+<!-- HERO -->
+<div id="home">
+  <div class="hero">
+    <div class="hero-img" role="img" aria-label="Salute's lively bar and dining room"></div>
+    <div class="wrap">
+      <div class="eyebrow">Italian · Downtown Hartford, CT</div>
+      <h1>Fresh Italian, made to <em>crave.</em></h1>
+      <p>Upscale casual dining at 100 Trumbull Street — house-made pastas, a creative wine list, signature martinis and the warmest welcome in Hartford.</p>
+      <div class="row">
+        <a class="btn btn-wine" href="#menu">View the menu <svg class="i"><use href="#i-arrow"/></svg></a>
+        <a class="btn btn-ghost" href="https://order.online/store/salute-hartford-46537428?pickup=true" target="_blank" rel="noopener"><svg class="i"><use href="#i-bag"/></svg>Order pickup</a>
+      </div>
+    </div>
+    <aside class="hero-card" aria-label="Opening hours">
+      <div class="status" id="status"><i></i><span>Hours</span></div>
+      <h4>Opening hours</h4>
+      <ul class="hours" id="hours"></ul>
+    </aside>
+  </div>
+</div>
+
+<div class="strip"><div class="wrap">
+  <div><svg><use href="#i-phone"/></svg><span><b>Reservations by phone</b>860-899-1350 — no online booking</span></div>
+  <div><svg><use href="#i-glass"/></svg><span><b>Happy Hour</b>Mon 3–9pm · Tue–Fri 3–6pm</span></div>
+  <div><svg><use href="#i-car"/></svg><span><b>50% off parking</b>LAZ garage next door*</span></div>
+  <div><svg><use href="#i-pin"/></svg><span><b>Easy to reach</b>Right off I-91 &amp; I-84</span></div>
+</div></div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="wrap about-grid">
+    <div class="about-photos">
+      <img class="tall" src="https://img1.wsimg.com/isteam/ip/81c6bc6f-0c44-462e-be36-14e540a6e3e9/IMG_5409.JPEG/:/rs=w:800" alt="Martini with olives at the Salute bar" loading="lazy">
+      <img class="sq" src="https://img1.wsimg.com/isteam/ip/81c6bc6f-0c44-462e-be36-14e540a6e3e9/IMG_0414.JPG/:/rs=w:700" alt="House mozzarella and tomato under the Salute awning" loading="lazy">
+      <img class="sq" src="https://img1.wsimg.com/isteam/ip/81c6bc6f-0c44-462e-be36-14e540a6e3e9/IMG_5385..Edit.jpg/:/rs=w:700" alt="Sunlit dining room set for service" loading="lazy">
+    </div>
+    <div>
+      <div class="eyebrow">Benvenuti · Welcome to the family</div>
+      <h2 style="font-size:clamp(2.2rem,4.4vw,3.4rem);margin-top:10px">Charming, contemporary — and always a good time.</h2>
+      <div class="pillars">
+        <div class="pillar"><span>i.</span><div><h3>Unique</h3><p>Fresh Italian dishes you're bound to love and crave, served in an energetic, upscale casual room with contemporary décor.</p></div></div>
+        <div class="pillar"><span>ii.</span><div><h3>Inviting</h3><p>Handcrafted woodwork, Tuscan colours and hand-painted murals. You'll be greeted by our “host with the most,” Dale “Daleo” Kirshnitz, and familiar faces from the Hartford restaurant scene.</p></div></div>
+        <div class="pillar"><span>iii.</span><div><h3>Exciting</h3><p>A creative wine list with an extensive by-the-glass selection, specialty martinis and fun cocktails at our lively bar. Bring your appetite, your friends and your family.</p></div></div>
+      </div>
+      <div class="owners">Owned and run by <b>Jimmy Cosgrove</b> and <b>Andy Rizzo</b>. Our executive chef and a highly motivated culinary team cook every dish with real passion.</div>
+    </div>
+  </div>
+</section>
+
+<!-- MENU -->
+<section id="menu">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><div class="eyebrow">La Cucina</div><h2>Our menus</h2></div>
+      <p>Everything is right here, so there's nothing to download. Gluten-free pasta, spaghetti squash or gnocchi can be swapped in, and we'll gladly accommodate other vegetarian requests.</p>
+    </div>
+    <div class="tabs" role="tablist" data-group="food"></div>
+    <div id="food-panels"></div>
+  </div>
+</section>
+
+<!-- BAR -->
+<section id="bar">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><div class="eyebrow">Bar &amp; Lounge</div><h2>A great meeting place</h2></div>
+      <p>A vast selection of fine wines, cordials, liquor and beers on tap, with the full menu served at the bar. Our espresso martinis are made to order and available to go.</p>
+    </div>
+    <div class="bar-grid">
+      <img src="https://img1.wsimg.com/isteam/ip/81c6bc6f-0c44-462e-be36-14e540a6e3e9/IMG_0167%203%20(1).JPG/:/rs=w:800" alt="Two orange martinis on the bar" loading="lazy">
+      <img src="https://img1.wsimg.com/isteam/ip/81c6bc6f-0c44-462e-be36-14e540a6e3e9/IMG_5390.JPEG/:/rs=w:900" alt="Guests at the busy Salute bar" loading="lazy">
+      <img src="https://img1.wsimg.com/isteam/ip/81c6bc6f-0c44-462e-be36-14e540a6e3e9/IMG_5393.JPEG/:/rs=w:900" alt="Salute wine and cocktail menus on a table" loading="lazy">
+    </div>
+    <div class="hh">
+      <div><div class="eyebrow" style="color:#f0c9a8">Every weekday</div><h3>Happy Hour</h3><p>Pull up a stool, order a signature martini and stay a while. Ask about today's draft beers and bourbons.</p></div>
+      <div class="hh-times">
+        <div><span>Monday</span><b>3 – 9pm</b></div>
+        <div><span>Tuesday – Friday</span><b>3 – 6pm</b></div>
+      </div>
+    </div>
+    <div class="tabs" role="tablist" data-group="drinks"></div>
+    <div id="drinks-panels"></div>
+  </div>
+</section>
+
+<!-- TAKEOUT -->
+<section id="takeout">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><div class="eyebrow">Salute at home</div><h2>Takeout &amp; family dinners</h2></div>
+      <p>Game day, a small get-together or a night off from cooking: take Salute home with you.</p>
+    </div>
+    <div class="feature-grid">
+      <article class="card">
+        <img src="https://img1.wsimg.com/isteam/ip/81c6bc6f-0c44-462e-be36-14e540a6e3e9/IMG_3361.jpg/:/rs=w:800" alt="Garlic cheese bread with marinara" loading="lazy">
+        <div class="b"><div class="eyebrow">$100 + tax · serves 4</div><h3>Family 4 Pack</h3><p>Garlic cheese bread, a salad, a pasta entrée, a chicken dish and two desserts. Plates and utensils included.</p><button class="go" data-open="food:family">See what's included <svg class="i"><use href="#i-arrow"/></svg></button></div>
+      </article>
+      <article class="card">
+        <img src="https://img1.wsimg.com/isteam/ip/81c6bc6f-0c44-462e-be36-14e540a6e3e9/IMG_5387.JPEG/:/rs=w:800" alt="Dining table by the window" loading="lazy">
+        <div class="b"><div class="eyebrow">$120 + tax · to go only</div><h3>Dinner for 2</h3><p>An appetizer, a salad, two entrées, dessert and a bottle of red or white wine for a three-course night in.</p><button class="go" data-open="food:dinner2">See what's included <svg class="i"><use href="#i-arrow"/></svg></button></div>
+      </article>
+      <article class="card">
+        <img src="https://img1.wsimg.com/isteam/ip/81c6bc6f-0c44-462e-be36-14e540a6e3e9/IMG_0167%203%20(1).JPG/:/rs=w:800" alt="Cocktails at the bar" loading="lazy" style="object-position:center 70%">
+        <div class="b"><div class="eyebrow">Made to order</div><h3>Espresso Martinis to go</h3><p>Our espresso martinis come in a to-go version too. Stop by or call ahead and our bar staff will mix one for you.</p><a class="go" href="tel:+18608991350">Call 860-899-1350 <svg class="i"><use href="#i-arrow"/></svg></a></div>
+      </article>
+    </div>
+    <div style="text-align:center;margin-top:34px"><a class="btn btn-wine" href="https://order.online/store/salute-hartford-46537428?pickup=true" target="_blank" rel="noopener"><svg class="i"><use href="#i-bag"/></svg>Order online for pickup</a></div>
+
+    <div class="press">
+      <div class="src">In the news<br><span style="color:var(--ink);font-family:var(--serif);font-size:1.5rem;letter-spacing:0;text-transform:none">Eat This, Not That!</span></div>
+      <p class="q">Named one of Connecticut's most buzzed-about eateries, with customers raving about our Rose Pasta: sweet sausage and mushrooms in a light tomato cream sauce.</p>
+      <a class="btn btn-line" href="https://www.eatthis.com/best-pasta-dish-every-state/" target="_blank" rel="noopener">Read the story</a>
+    </div>
+  </div>
+</section>
+
+<!-- CATERING -->
+<section id="catering">
+  <div class="wrap">
+    <div class="cater-hero">
+      <div>
+        <div class="eyebrow">Salute Catering</div>
+        <h2>From the boardroom to the backyard.</h2>
+        <p>Full-service, menu-based and custom catering for everything from large corporate events to small family gatherings. Salad dressings, nuts and cheese always come on the side.</p>
+        <p>Have a question right away? Stop by during business hours and we'll build a menu or plan your event with you in person.</p>
+        <div class="steps">
+          <div><b>1</b><span>Pick your dishes and pan sizes below</span></div>
+          <div><b>2</b><span>Call us to confirm the date and details</span></div>
+          <div><b>3</b><span>Pick up, or let us cater on site</span></div>
+        </div>
+        <a class="btn btn-wine" href="tel:+18608991350"><svg class="i"><use href="#i-phone"/></svg>Plan your event · (860) 899-1350</a>
+      </div>
+      <img src="https://img1.wsimg.com/isteam/ip/81c6bc6f-0c44-462e-be36-14e540a6e3e9/Catering1.jpg/:/rs=w:1100" alt="Catering buffet service" loading="lazy">
+    </div>
+    <div class="panel" id="catering-panel"></div>
+  </div>
+</section>
+
+<!-- VISIT -->
+<section id="visit">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><div class="eyebrow">Find us</div><h2>Visit Salute</h2></div>
+      <p>In the heart of downtown Hartford, with easy access from I-91 and I-84 and parking in the LAZ garage attached to our building.</p>
+    </div>
+    <div class="visit">
+      <div class="info">
+        <div class="blk">
+          <h3>Reservations &amp; private parties</h3>
+          <p style="margin-bottom:10px">We don't take online reservations. Give us a call to book a table or ask about private parties.</p>
+          <a class="tel" href="tel:+18608991350">860-899-1350</a>
+        </div>
+        <div class="blk">
+          <h3>Address</h3>
+          <p>100 Trumbull Street<br>Hartford, Connecticut 06103</p>
+          <p style="margin-top:12px"><a class="btn btn-line" href="https://www.google.com/maps/dir/?api=1&destination=100+Trumbull+St+Hartford+CT+06103" target="_blank" rel="noopener"><svg class="i"><use href="#i-pin"/></svg>Get directions</a></p>
+        </div>
+        <div class="blk">
+          <h3>Parking</h3>
+          <p>Get 50% off at the LAZ parking garage next door (not valid on event nights).</p>
+        </div>
+        <div class="blk">
+          <h3>Sunday hours</h3>
+          <p>We open Sunday at 3pm, and sometimes earlier for events. Call us to check.</p>
+        </div>
+      </div>
+      <div class="map"><iframe title="Map to Salute, 100 Trumbull St, Hartford" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=Salute+Restaurant,+100+Trumbull+St,+Hartford,+CT+06103&output=embed"></iframe></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="f-grid">
+      <div>
+        <div class="f-logo"><img src="https://img1.wsimg.com/isteam/ip/81c6bc6f-0c44-462e-be36-14e540a6e3e9/Logo%202025.png/:/rs=w:300" alt="Salute"></div>
+        <p style="font-size:.92rem;max-width:32ch">Upscale casual Italian in downtown Hartford. Welcome to the Salute family!</p>
+        <div class="social">
+          <a href="https://www.facebook.com/SaluteHartford/" target="_blank" rel="noopener" aria-label="Facebook"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M14 8h3V4h-3c-2.8 0-4 1.8-4 4.3V10H7v4h3v8h4v-8h3l1-4h-4V8.6c0-.4.3-.6.6-.6z"/></svg></a>
+          <a href="https://www.instagram.com/salutehartford/" target="_blank" rel="noopener" aria-label="Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></a>
+        </div>
+      </div>
+      <div><h5>Visit</h5><ul><li>100 Trumbull St</li><li>Hartford, CT 06103</li><li><a href="tel:+18608991350">860-899-1350</a></li></ul></div>
+      <div><h5>Hours</h5><ul><li>Mon–Thu · 11:30am–9:30pm</li><li>Fri–Sat · 11:30am–10pm</li><li>Sun · 3–9pm</li></ul></div>
+      <div><h5>More Salute</h5><ul>
+        <li><a href="https://salutehartford.webgiftcardsales.com/" target="_blank" rel="noopener">Gift cards</a></li>
+        <li><a href="http://www.saluterockyhill.com/" target="_blank" rel="noopener">Rocky Hill location</a></li>
+        <li><a href="https://salutehartford.com/donations" target="_blank" rel="noopener">Donations</a></li>
+        <li><a href="https://order.online/store/salute-hartford-46537428?pickup=true" target="_blank" rel="noopener">Order online</a></li>
+      </ul></div>
+    </div>
+    <div class="f-bot"><span>© 2026 Salute Restaurant. All rights reserved.</span><span>Please let your server know about any food allergies.</span></div>
+  </div>
+</footer>
+
+<div class="callbar">
+  <a class="btn btn-wine" href="tel:+18608991350"><svg class="i"><use href="#i-phone"/></svg>Call to reserve</a>
+  <a class="btn btn-line" href="#menu">Menu</a>
+</div>
+
+<script>
+/* ===== DATA: transcribed from Salute Hartford's current menus ===== */
+const V='v',S='s';
+const FOOD=[
+ {id:'dinner',label:'Dinner',title:'Dinner',sub:'Starters, pastas, house selections & the grill',groups:[
+  {h:'Starters',items:[
+   ['Garlic Cheese Bread',8,'“Already” famous'],
+   ['Sweet Potato Ravioli',11,'House-made ravioli with sweet potato filling and sage crema',[V]],
+   ['Jumbo Lump Crab Cake',15,'Asian cabbage slaw and a citrus aioli'],
+   ['Crisp Flatbread',14,'Garlic chicken, vine-ripe tomatoes, fresh mozzarella, basil, olive oil and a balsamic reduction'],
+   ['Spicy Fried Calamari',15,'Cherry peppers, scallions, asiago cheese, sriracha aioli and marinara',[S]],
+   ['Tuna Maki',16,'Tuna and rice wrapped in nori and fried, with ponzu, pickled ginger and spicy mayo']]},
+  {h:'Salads',items:[
+   ['Field Greens',9,'Hand-picked greens, candied walnuts and oven-roasted shallot vinaigrette'],
+   ['Greek Salad',11,'Baby greens, cucumber, tomato, kalamata olives, feta and shallot vinaigrette'],
+   ['House Mozzarella & Tomato',12,'House-made mozzarella, vine-ripened tomato, basil vinaigrette and a garlic crostini'],
+   ['Classic Caesar',13,'Hearts of romaine, Caesar dressing, crisp asiago croutons, shaved grana'],
+   ['Butternut Squash Salad',13,'Greens, roasted butternut squash, tart apples, pistachios, goat cheese, dried cranberries, apple cider vinaigrette'],
+   ['Meatball Salad',15,'House-made meatballs, arugula, cucumber, cherry tomato, fresh mozzarella and balsamic vinaigrette']]},
+  {h:'Pasta Dishes',note:'Add chicken 6 · shrimp 8 · Substitute gluten-free pasta, spaghetti squash or gnocchi +3',items:[
+   ['Rose Pasta',28,'Sweet sausage, mushrooms and spinach in a light tomato cream sauce with four-cheese tortellini'],
+   ['Chicken Gnocchi',28,'Chicken, sun-dried tomatoes and house-made ricotta gnocchi in a house pesto cream sauce'],
+   ['Pomodoro',20,'Fresh tomato, slivered garlic, fresh basil and fresh mozzarella tossed with rigatoni',[V]],
+   ['Pasta ala Vodka',22,'Rigatoni in a light tomato cream with feta, broccoli, garlic and sun-dried tomatoes',[V]],
+   ['Chicken Parmesan',25,'Crispy breaded and baked with marinara and fresh mozzarella, over linguine'],
+   ['Ragu Bolognese',25,'A classic ragu of beef, pork and veal with a vegetable sofrito, finished with a touch of cream, over rigatoni'],
+   ['Shrimp Piccata',28,'Sautéed shrimp, leeks, onions, garlic, capers and tomato in a white wine, lemon and butter sauce over linguine'],
+   ['Shrimp Fra Diablo',29,'Sautéed shrimp, hot Italian sausage, Sicilian olives, red pepper flakes and spinach in a fiery tomato sauce over linguine',[S]],
+   ['Giobatto',30,'A spicy stew of chicken, sausage and veal with fennel, mushrooms and red peppers over egg fettuccine',[S]]]},
+  {h:'House Selections',items:[
+   ["Salute's Sunday Dinner",22,'Linguine with house marinara and home-made meatballs'],
+   ['Spasta Pesto',22,'Julienned vegetables in a nest of spaghetti squash with pesto and our house-made fresh tomato sauce',[V]],
+   ['Lemon Panko Crusted Cod',30,'With house mashed potatoes and sautéed broccoli'],
+   ['North Atlantic Salmon',30,'10 oz grilled salmon, potato lasagna and sautéed spinach with preserved lemon cream'],
+   ['Boneless Short Rib',35,'11 oz short rib, carrots, petite peas and sour cream mashed potatoes'],
+   ['Blackened Snapper',35,'Pan-seared snapper, garlicky broccoli rabe, sweet potato mash and a citrus-cilantro sour cream'],
+   ['Pork Chop',38,'14 oz chop, sweet potato hash, sautéed broccoli and a cider demi-glaze']]},
+  {h:'From the Grill',note:'Choose one: creamer mashed, steak fries or potato lasagna. Add grilled asparagus, sautéed broccoli or sautéed spinach for 5.',items:[
+   ['CAB Hanger Steak',38,'10 oz Certified Angus, with a gorgonzola cream béchamel'],
+   ['Filet Mignon',45,'8 oz Certified Angus, Salute steak sauce']]},
+  {h:'Sides',items:[
+   ['Creamer Mashed Potatoes',7],['Steak Fries',7],['Sautéed Spinach with Garlic',8],['Sweet Potato Mashed',8],
+   ['Meatballs (2) with Marinara',8,'Add sweet and hot sausage +4'],['Broccoli Rabe with Garlic',9,'Add sweet and hot sausage +4'],
+   ['Grilled Asparagus',10],['Potato Lasagna',10],['Salute Mac & Cheese',14,'With caramelized onions and bacon']]}
+ ]},
+ {id:'lunch',label:'Lunch',title:'Lunch',sub:'Salads, sandwiches & lunch entrées',groups:[
+  {h:'Lunch Salads',note:'Add chicken 6 · shrimp 8 · flank steak 10 · salmon 10',items:[
+   ['Garlic Cheese Bread',8,'“Already famous”'],
+   ['Field Greens',9,'Hand-picked greens, candied walnuts and oven-roasted shallot vinaigrette'],
+   ['Greek Salad',11,'Baby greens, cucumber, tomato, kalamata olives, feta and shallot vinaigrette'],
+   ['House Mozzarella & Tomato',12,'Home-made mozzarella, vine-ripened tomato, basil vinaigrette and a garlic crostini'],
+   ['Classic Caesar',13,'Hearts of romaine, Caesar dressing, crisp asiago croutons, shaved grana'],
+   ['Butternut Squash Salad',13,'Greens, roasted butternut squash, tart apples, pistachios, goat cheese, dried cranberries, apple cider vinaigrette'],
+   ['Meatball Salad',15,'House-made meatballs, arugula, cucumber, cherry tomato, fresh mozzarella and balsamic vinaigrette']]},
+  {h:'Sandwiches',note:'All sandwiches come with field greens or steak fries',items:[
+   ['Tomato & Mozzarella Ciabatta',13,'Vine-ripened tomato, fresh mozzarella, pesto, balsamic syrup, toasted ciabatta',[V]],
+   ['Grilled Chicken Sandwich',14,'Mozzarella, tomato, pesto and a parmesan aioli'],
+   ['Fish Tacos',15,'Tempura-battered cod with house-made vegetable slaw'],
+   ['Jumbo Lump Crabcake',16,'On a brioche roll with arugula, plum tomato and sriracha aioli'],
+   ['Cheeseburger',17,'8 oz prime ground beef on a kaiser roll with lettuce, tomato, onion and cheddar or Swiss. Add bacon +1']]},
+  {h:'Lunch Entrées',note:'Add chicken 6 · shrimp 8 · Substitute gluten-free pasta, spaghetti squash or gnocchi +2',items:[
+   ['Pomodoro',12,'Fresh tomato, slivered garlic, fresh basil and fresh mozzarella tossed with rigatoni',[V]],
+   ['Pasta ala Vodka',12,'Rigatoni in a light tomato cream with feta, broccoli, garlic and sun-dried tomato',[V]],
+   ['Sweet Potato Ravioli',13,'House-made ravioli with sweet potato filling and sage crema',[V]],
+   ['Spasta Pesto',13,'Julienned vegetables in a nest of spaghetti squash with pesto and house-made tomato sauce',[V]],
+   ['Ragu Bolognese',14,'Beef, pork and veal ragu with a vegetable sofrito and a touch of cream, over rigatoni'],
+   ['Chicken Parmesan',14,'Crispy breaded and baked with marinara and house mozzarella, over linguine'],
+   ['Salute Mac n Cheese',14,'With caramelized onions and smoked bacon'],
+   ['Rose Pasta',15,'Sweet sausage, mushrooms and spinach in a light tomato cream with four-cheese tortellini'],
+   ['Chicken Gnocchi',15,'Chicken, sun-dried tomatoes and house-made ricotta gnocchi in a pesto cream sauce'],
+   ['Shrimp Piccata',16,'Sautéed shrimp, leeks, onions, garlic, capers and tomato in a white wine, lemon and butter sauce over linguine'],
+   ['Shrimp Fra Diablo',17,'Sautéed shrimp, hot Italian and chorizo sausage, Sicilian olives, red pepper flakes and spinach in a fiery tomato sauce over linguine',[S]]]}
+ ]},
+ {id:'dessert',label:'Dessert',title:'Dessert',sub:'House-made, every day',groups:[
+  {h:'Dolci',items:[
+   ['Homemade Biscotti',4,'With walnuts, six pieces'],
+   ['Chocolate Chip Cannoli (2)',8],
+   ['Chocolate Lava Cake',9,'Served warm with vanilla gelato, candied walnuts and chocolate sauce'],
+   ['Limoncello Cake',9,'With lemon syrup and whipped cream'],
+   ['Homemade Tiramisu',9,'With chocolate sauce'],
+   ['Homemade Vanilla Crème Brûlée',9],
+   ['Carrot Cake',9],
+   ['Gluten-Free Decadence Cake',9],
+   ['New York Style Cheesecake',10,'With macerated berries and whipped cream']]},
+  {h:'Sorbet & Gelato',items:[['Today’s Flavours','','Ask your server what we’re scooping today']]}
+ ]},
+ {id:'dinner2',label:'Dinner for 2',title:'Dinner for 2',sub:'To go only',bundle:{price:'$120',per:'+ tax',lead:'A three-course dinner for two, plus a bottle of wine. Every meal comes with house bread and smoked tomato butter, walnut biscotti and plasticware.',groups:[
+  {h:'Appetizer',pick:'Choose 1',items:[['Sweet Potato Ravioli','House-made ravioli, sweet potato filling, sage cream'],['Jumbo Lump Crab Cake','Asian cabbage slaw and a lemongrass aioli'],['Meatballs (2)','With sweet & hot sausage and marinara'],['Spicy Fried Calamari','Cherry peppers, scallions, asiago, sriracha aioli, marinara']]},
+  {h:'Salad',pick:'Choose 1',items:[['Tossed Salad','Field greens, carrots, cucumber, tomato and Vidalia vinaigrette'],['Greek Salad','Baby greens, cucumber, tomato, kalamata olives, feta, shallot vinaigrette'],['Tomato & Mozzarella','House-made mozzarella, vine-ripened tomato, basil vinaigrette, garlic crostini']]},
+  {h:'Entrées',pick:'Choose 2',items:[['Boneless Short Rib (11 oz)','Carrots, petite peas, sour cream mashed potatoes'],['North Atlantic Grilled Salmon (10 oz)','Potato lasagna, sautéed spinach, lemon cream'],['Hanger Steak (10 oz)','Mashed potatoes, sautéed broccoli, gorgonzola béchamel'],['Chicken Piccata','Capers, leeks, onion, garlic, tomato, white wine, lemon & butter. Mashed potatoes and spinach'],['Rose Pasta','Sweet sausage, mushrooms and spinach in light tomato cream with four-cheese tortellini'],['Spasta Pesto','Julienned vegetables in spaghetti squash with pesto and fresh tomato sauce']]},
+  {h:'Dessert',pick:'Choose 1',items:[['Tiramisu, Cheesecake or Carrot Cake','']]},
+  {h:'Bottle of Wine',pick:'Choose 1',items:[['Red','Coastal Vines Cabernet · Pepperwood Merlot · Montpellier Pinot Noir'],['White','Stone Cellars Chardonnay · Avia Pinot Grigio · Gato Negro Sauvignon Blanc']]}]}},
+ {id:'family',label:'Family 4 Pack',title:'Family 4 Pack',sub:'Takeout only · plates & utensils provided',bundle:{price:'$100',per:'+ tax',lead:'Dinner for four, made for families, friends and game day. Takeout only; no discounts apply.',groups:[
+  {h:'Included',pick:'Always',items:[['Garlic Cheese Bread','Our “already famous” loaf']]},
+  {h:'Salad',pick:'Choose 1',items:[['Tossed Salad','Mixed field greens, carrots, cucumbers, tomatoes and house Vidalia vinaigrette'],['Caesar Salad','Hearts of romaine, shaved grana, asiago croutons and Caesar dressing']]},
+  {h:'Pasta Entrée',pick:'Choose 1',items:[['Rose Pasta','Sweet sausage, mushrooms and spinach in light tomato cream with four-cheese tortellini'],['Chicken Gnocchi','Chicken, sun-dried tomatoes and ricotta gnocchi in pesto cream'],['Mac n Cheese','With caramelized onions and smoked bacon'],['Shrimp Fra Diablo','Shrimp, hot Italian and chorizo sausage, Sicilian olives, red pepper and spinach in a fiery tomato sauce over linguine'],['Pasta ala Vodka','Rigatoni in light tomato cream with broccoli, garlic, sun-dried tomato and feta']]},
+  {h:'Chicken',pick:'Choose 1',items:[['Chicken Marsala, Piccata or Parm','']]},
+  {h:'Dessert',pick:'Choose 2',items:[['Tiramisu, Cheesecake or Carrot Cake','']]}]}}
+];
+
+const DRINKS=[
+ {id:'cocktails',label:'Cocktails & Beer',title:'Cocktails & Beer',sub:'Ask about today’s draft beers and bourbons',groups:[
+  {h:'Signature Cocktails',items:[
+   ['American Mule',12,"Tito's Handmade Vodka, Wild Moon cranberry liqueur, fresh lime and ginger beer"],
+   ['Aperol Spritz',12,'Aperol, prosecco, a splash of seltzer, orange slice'],
+   ["Salute's Arnold Daly",12,'Sweet tea vodka, citrus vodka, house-made lemonade'],
+   ['Cool As A Cucumber',12,'Pearl cucumber vodka, St. Germain, sour mix and a splash of soda'],
+   ["Jeffy's Hard Strawberry Lemonade",12,'Strawberry vodka, citrus vodka, strawberry pucker, lemonade'],
+   ['Boulevardier',13,'Sazerac Rye, Campari and sweet vermouth'],
+   ['Bourbon Basil Smash',14,'Elijah Craig bourbon, fresh basil, fresh lemon, simple syrup'],
+   ["Salute's Signature Manhattan",16,'Barrel-aged in house: bourbon, Carpano Antica vermouth and orange bitters']]},
+  {h:'Martini Selection',items:[
+   ['Pomatini',12,"Tito's vodka, pomegranate liqueur, triple sec and sour mix"],
+   ['X-Rated',13,'Absolut Ruby Red, X-Rated Fusion liqueur, pomegranate liqueur and Sprite'],
+   ['The Sunset',13,"Tito's Handmade vodka, peach liqueur, lemonade, orange juice, cranberry"],
+   ['Peachy Keen',13,'Wheatley vodka, peach liqueur, orange juice, champagne'],
+   ['Salutini',13,'Black Raz, orange vodka, pineapple juice, champagne'],
+   ['French 75',14,'Gray Whale gin, fresh lemon, simple syrup, champagne'],
+   ['Espresso',16,'Our five-liquor concoction, made to order']]},
+  {h:'Tequila Bar',items:[
+   ['Skinny Margarita',13,'Espolòn blanco, agave nectar, fresh lime'],
+   ['Pineapple Express',13,'Tanteo jalapeño tequila, pineapple juice, fresh lime, agave nectar'],
+   ['Tequila Bee Sting',14,'Corazón tequila, local honey syrup, fresh lemon']]},
+  {h:'Bottled Beers',items:[['Budweiser',6],['Bud Light',6],['Miller Lite',6],['Coors Light',6],['Michelob Ultra',6],['Corona',7],['Stella Artois',7],['Heineken',7]]},
+  {h:'Non-Alcoholic',items:[['Athletic (non-alcoholic beer)',7],['San Pellegrino Sparkling (250 ml)',5],['San Pellegrino Sparkling (1 L)',9],['Saratoga Still Water (250 ml)',5]]}
+ ]},
+ {id:'red',label:'Red Wines',title:'Red Wines',sub:'By the glass and by the bottle',wine:[
+  ['Cabernet Sauvignon',[['Coastal Vines','California',9,32],['Avalon','California',11,40],["Sterling Vintner's Central Coast",'California',14,49],['Justin','Paso Robles, California',19,78],['St. Supéry','Napa Valley, California',null,92],['Jordan','Sonoma, California',null,120],["Stag's Leap",'Napa Valley, California',null,140],['Nickel & Nickel C.C. Ranch','Napa Valley, California',null,225]]],
+  ['Pinot Noir',[["Santa Rita '120'",'Chile',9,32],['Mark West','California',11,42],['Z. Alexander Brown “Uncaged”','California',14,49],['WillaKenzie','Willamette Valley, Oregon',null,68],['Belle Glos “Dairyman”','Russian River Valley, California',null,98]]],
+  ['Merlot',[['Pepperwood Grove','California',9,32],['14 Hands','Columbia Valley, Washington',12,44]]],
+  ['Varietals',[['Gabbiano','Tuscany, Italy',10,35],['Astica Malbec','Cuyo, Mendoza, Argentina',10,35],['Fantini Farnese Montepulciano',"Abruzzo, Italy",11,40],['Banfi Col di Sasso','Tuscany, Italy',11,40],['Ruffino Chianti','Tuscany, Italy',12,44],['Spellbound Petite Sirah','Napa, California',12,44],['Camigliano Rosso Toscano Poderuccio','Tuscany, Italy',null,48],['Monsanto Chianti Classico Riserva','Castello di Monsanto, Italy',null,58],['Ridge Three Valleys Zinfandel','Sonoma, California',null,65],['Damilano Barolo','Piedmont, Italy',null,78],['Caparzo Brunello di Montalcino','Tuscany, Italy',null,88],['Produttori del Barbaresco','Piedmont, Italy',null,95],['Frescobaldi CastelGiocondo Brunello di Montalcino','Tuscany, Italy',null,135]]]
+ ]},
+ {id:'white',label:'White & Sparkling',title:'White & Sparkling',sub:'By the glass and by the bottle',wine:[
+  ['Pinot Grigio',[['Avia','Slovenia',9,32],['Torre di Luna','Delle Venezie, Italy',11,40],['Candoni','Veneto, Italy',13,49]]],
+  ['Chardonnay',[['Stone Cellars','California',9,32],['Angeline','Sonoma, California',11,42],['Sonoma-Cutrer','Sonoma, California',15,56]]],
+  ['Sauvignon Blanc',[['Gato Negro','Chile',9,32],['The Crossings','New Zealand',11,40],['Oyster Bay','Marlborough, New Zealand',13,49]]],
+  ['Varietals',[['Beringer White Zinfandel','California',8,29],['Fetzer Riesling','California',9,32],['Listel Rosé','France',11,40]]],
+  ['Prosecco',[['Prima Perla','Veneto, Italy',11,44]]],
+  ['Champagne & Sparkling',[['Chandon Brut','California',11,40],['Piper Sonoma Brut N.V.','California',null,49],['Veuve Clicquot','France',null,120]]]
+ ]},
+ {id:'after',label:'After Dinner',title:'After Dinner Drinks',sub:'The perfect finish',lists:[
+  ['Coffee & Classics',['House-made Espresso Martini','Limoncello','Italian Coffee','Irish Coffee','Keoke Coffee']],
+  ['Ports',['Cockburn Tawny 10 yr','Fonseca No. 27','Taylor Fladgate 20 yr']],
+  ['Cognac',['Rémy Martin','Rémy Martin XO','Courvoisier']],
+  ['Bourbon · Scotch · Whiskey',["Angel's Envy","Angel's Envy Caribbean Cask Rye",'Basil Hayden',"Blanton's",'Buffalo Trace','Bulleit Rye','Chivas Regal 12 yr',"Dewar's",'Eagle Rare','Elijah Craig','Evan Williams','Glenlivet 12 yr',"Jefferson's Reserve",'Johnnie Walker Black','Johnnie Walker Blue','Knob Creek','Macallan 12 yr',"Maker's Mark","Michter's Rye",'Mine Hill','Oban 14 yr','Woodford Reserve']],
+  ['Digestifs & Liqueurs',['Amaretto Disaronno','Averna','B & B',"Baileys","Baileys Chocolate",'Drambuie','Frangelico','Galliano','Grand Marnier','Sambuca','Sambuca Black','Tuaca']]
+ ]}
+];
+
+const CATERING={cols:[['Small Pan','feeds 3–6'],['Half Pan','feeds 8–10'],['Med Pan','feeds 12–16'],['Full Pan','feeds 18–24']],rows:[
+ ['Breads & Starters'],
+ ['Garlic Bread','$8 each',null,null,'$24 (3)','$40 (5)','$64 (8)'],
+ ['Sweet Potato Ravioli','$1.50 each',V,'$30 (20)',null,'$75 (50)',null],
+ ['Pastas'],
+ ['Rose Pasta','',null,55,90,140,170],['Chicken Gnocchi','',null,55,90,140,170],
+ ['Rigatoni Marinara','',V,40,60,90,115],['Pomodoro','',V,45,70,110,130],
+ ['Pomodoro with Chicken, Hot or Sweet Sausage','',null,55,85,125,150],['Pomodoro with Shrimp','',null,60,95,140,180],
+ ['Pasta ala Vodka','',V,50,80,115,145],['Pasta ala Vodka with Chicken, Hot or Sweet Sausage','',null,55,90,130,165],['Pasta ala Vodka with Shrimp','',null,60,95,140,180],
+ ['Ragu Bolognese','',null,55,90,130,170],['Spasta Pesto','',V,55,80,115,150],
+ ['Shrimp Fra Diablo','',null,60,95,140,180],['Shrimp Piccata','',null,60,95,140,180],
+ ['Chicken (priced per piece, no pasta)'],
+ ['Chicken Parmesan, Piccata or Marsala','',null,'$7 / piece',null,null,null],['Grilled Chicken','',null,'$6 / piece',null,null,null],
+ ['Meatballs, Mac & Sides'],
+ ['Mini Meatballs with Sweet & Hot Sausage','',null,55,80,120,145],['Mini Meatballs in Marinara','',null,55,80,120,145],
+ ['Salute Mac n Cheese','with bacon & onion',null,55,80,120,150],
+ ['Mixed Vegetables','zucchini, squash, broccoli, carrots & red peppers',V,35,55,80,100],
+ ['Potato Lasagna','48-hour notice',V,null,60,null,105],
+ ['Salads'],
+ ['Field Greens','',V,40,55,75,95],['Caesar Salad','',V,40,55,80,100],
+ ['Tossed Salad','field greens, carrots, cucumbers, diced tomato',V,40,55,75,95],['Greek Salad','',V,40,55,80,100],
+ ['Tomato & Mozzarella','',V,null,65,null,110],
+ ['Desserts'],
+ ['Homemade Walnut Biscotti','platter',null,null,45,null,80],['Homemade Tiramisu','48-hour notice',null,null,95,null,160]
+]};
+
+/* ===== RENDER ===== */
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const tags=t=>(t||[]).map(x=>x===V?'<span class="tag v" title="Vegetarian">V</span>':'<span class="tag s" title="Spicy">SPICY</span>').join('');
+const legend='<span class="legend"><span><span class="tag v">V</span> Vegetarian</span><span><span class="tag s">SPICY</span> Spicy</span></span>';
+const allergy='Please let your server know about any food allergies. Eating raw or undercooked meat, poultry, seafood, shellfish or eggs may increase your risk of foodborne illness.';
+
+function itemsHTML(g){return `<div class="group"><h4>${esc(g.h)}</h4>${g.note?`<p class="note">${esc(g.note)}</p>`:''}${g.items.map(([n,p,d,t])=>`<div class="item"><div class="t"><span class="n">${esc(n)}${tags(t)}</span><span class="lead"></span><span class="p">${p}</span></div>${d?`<div class="d">${esc(d)}</div>`:''}</div>`).join('')}</div>`}
+function bundleHTML(b){return `<div class="callout" style="display:flex;gap:22px;align-items:center;flex-wrap:wrap"><div><span class="price-big">${b.price}</span> <span style="color:var(--ink-2)">${b.per}</span></div><div style="flex:1;min-width:220px">${esc(b.lead)}</div></div><div class="cols">${b.groups.map(g=>`<div class="group"><h4>${esc(g.h)}</h4><p class="note">${esc(g.pick)}</p><ul class="choices">${g.items.map(([n,d])=>`<li><b>${esc(n)}</b>${d?`<span>${esc(d)}</span>`:''}</li>`).join('')}</ul></div>`).join('')}</div>`}
+function wineHTML(w){return `<div class="tbl-wrap"><table class="wine"><thead><tr><th>Wine</th><th>Glass</th><th>Bottle</th></tr></thead><tbody>${w.map(([h,rows])=>`<tr class="sub"><td colspan="3">${esc(h)}</td></tr>${rows.map(([n,r,g,b])=>`<tr><td>${esc(n)} <span>· ${esc(r)}</span></td><td class="${g?'':'na'}">${g??'—'}</td><td>${b}</td></tr>`).join('')}`).join('')}</tbody></table></div>`}
+function listsHTML(l){return `<div class="cols">${l.map(([h,a])=>`<div class="group"><h4>${esc(h)}</h4><ul class="list-dots" style="columns:${a.length>10?2:1}">${a.map(x=>`<li>${esc(x)}</li>`).join('')}</ul></div>`).join('')}</div>`}
+
+function panelHTML(m,kind){
+  let body=m.groups?`<div class="cols">${m.groups.map(itemsHTML).join('')}</div>`:m.bundle?bundleHTML(m.bundle):m.wine?wineHTML(m.wine):listsHTML(m.lists);
+  const foot=kind==='food'?`<div class="fineprint">${m.groups?legend:'<span></span>'}<span style="max-width:70ch">${allergy}</span></div>`:`<div class="fineprint"><span>Prices in USD. Selections change, so ask your server what's pouring tonight.</span><span>Please enjoy responsibly.</span></div>`;
+  return `<div class="panel-top"><h3>${esc(m.title)}</h3><p>${esc(m.sub)}</p></div>${body}${foot}`;
+}
+
+function buildTabs(group,data){
+  const bar=document.querySelector(`.tabs[data-group="${group}"]`),host=document.getElementById(group+'-panels');
+  data.forEach((m,i)=>{
+    const b=document.createElement('button');b.className='tab';b.role='tab';b.id=`t-${group}-${m.id}`;b.textContent=m.label;b.setAttribute('aria-controls',`p-${group}-${m.id}`);b.setAttribute('aria-selected',i===0);
+    b.onclick=()=>select(group,m.id);bar.appendChild(b);
+    const p=document.createElement('div');p.className='panel'+(i===0?' show':'');p.id=`p-${group}-${m.id}`;p.role='tabpanel';p.setAttribute('aria-labelledby',b.id);p.innerHTML=panelHTML(m,group);host.appendChild(p);
+  });
+  bar.addEventListener('keydown',e=>{if(!['ArrowRight','ArrowLeft'].includes(e.key))return;const t=[...bar.children],i=t.indexOf(document.activeElement);if(i<0)return;const n=t[(i+(e.key==='ArrowRight'?1:-1)+t.length)%t.length];n.focus();n.click();});
+}
+function select(group,id){
+  document.querySelectorAll(`.tabs[data-group="${group}"] .tab`).forEach(t=>t.setAttribute('aria-selected',t.id===`t-${group}-${id}`));
+  document.querySelectorAll(`#${group}-panels .panel`).forEach(p=>p.classList.toggle('show',p.id===`p-${group}-${id}`));
+}
+buildTabs('food',FOOD);buildTabs('drinks',DRINKS);
+
+// catering table
+(function(){
+  const fmt=v=>v==null?'<td class="na">—</td>':`<td>${typeof v==='number'?'$'+v:esc(v)}</td>`;
+  const rows=CATERING.rows.map(r=>r.length===1?`<tr class="sub"><td colspan="5"><span class="stick">${esc(r[0])}</span></td></tr>`:`<tr><td>${esc(r[0])}${tags(r[2]?[r[2]]:[])}${r[1]?`<small>${esc(r[1])}</small>`:''}</td>${r.slice(3).map(fmt).join('')}</tr>`).join('');
+  document.getElementById('catering-panel').innerHTML=`<div class="panel-top"><h3>Catering Menu</h3><p>Priced per pan</p></div><div class="tbl-wrap"><table><thead><tr><th>Dish</th>${CATERING.cols.map(([a,b])=>`<th>${a}<small>${b}</small></th>`).join('')}</tr></thead><tbody>${rows}</tbody></table></div><div class="fineprint">${legend.replace(/<span><span class="tag s">SPICY<\/span> Spicy<\/span>/,'')}<span>Dressing, nuts and cheese always come on the side for salads. Some items need 48 hours' notice.</span></div>`;
+})();
+
+// cards that open a specific menu tab
+document.querySelectorAll('[data-open]').forEach(b=>b.addEventListener('click',()=>{const [g,id]=b.dataset.open.split(':');select(g,id);document.getElementById(g==='food'?'menu':'bar').scrollIntoView({behavior:'smooth'});}));
+
+// hours + live open/closed
+(function(){
+  const H=[['Sunday',15*60,21*60,'3 – 9pm'],['Monday',690,1290,'11:30am – 9:30pm'],['Tuesday',690,1290,'11:30am – 9:30pm'],['Wednesday',690,1290,'11:30am – 9:30pm'],['Thursday',690,1290,'11:30am – 9:30pm'],['Friday',690,1320,'11:30am – 10pm'],['Saturday',690,1320,'11:30am – 10pm']];
+  // Restaurant time (America/New_York)
+  let d=new Date();try{d=new Date(new Date().toLocaleString('en-US',{timeZone:'America/New_York'}))}catch(e){}
+  const day=d.getDay(),min=d.getHours()*60+d.getMinutes();
+  const order=[1,2,3,4,5,6,0];
+  document.getElementById('hours').innerHTML=order.map(i=>`<li class="${i===day?'today':''}"><span>${H[i][0]}</span><span>${H[i][3]}</span></li>`).join('');
+  const open=min>=H[day][1]&&min<H[day][2],st=document.getElementById('status');
+  st.classList.toggle('closed',!open);st.querySelector('span').textContent=open?'Open now':'Closed now';
+})();
+
+// nav: drawer + scrollspy
+const burger=document.querySelector('.burger'),drawer=document.querySelector('.drawer');
+burger.onclick=()=>{const o=drawer.classList.toggle('open');burger.setAttribute('aria-expanded',o)};
+drawer.querySelectorAll('a').forEach(a=>a.onclick=()=>{drawer.classList.remove('open');burger.setAttribute('aria-expanded',false)});
+const navLinks=[...document.querySelectorAll('.links a')];
+const spy=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)navLinks.forEach(a=>a.classList.toggle('on',a.getAttribute('href')==='#'+e.target.id))}),{rootMargin:'-45% 0px -50% 0px'});
+['about','menu','bar','takeout','catering','visit'].forEach(id=>spy.observe(document.getElementById(id)));
+</script>
+</body>
+</html>
